@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
-
+import TodoList from './TodoList';
 function App() {
+
+  // id - Guaranteed unique number of each TODO Item
+  // title - Short title of what needs doing
+  // description - longer detailed description of what to do
+  // dueDate - date string of the due date
+
+  //My trial work below
+
+
+  const DATA = [
+    { 
+      id: 1, 
+      title: 'Clean Your Room', 
+      description: 'Your room is a mess. Please clean it', 
+      dueDate: '8/1/2021'
+    },
+    { 
+      id: 2, 
+      title: 'Buy Groceries', 
+      description: 'You need food, fridge is empty', 
+      dueDate: '7/6/2021'
+    },
+    { 
+      id: 3, 
+      title: 'Do Laundry', 
+      description: 'Wash your clothes', 
+      dueDate: '7/16/2021'
+    },
+
+  ]
+// DO NOT CHANGE ANYTHING UNDER THIS LINE
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoList items={DATA} />
     </div>
   );
 }

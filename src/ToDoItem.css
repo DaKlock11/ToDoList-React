@@ -1,0 +1,60 @@
+.bg-white {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    height: 100px;
+    padding: 20px;
+    margin: 5px;
+    background-color: white;
+}
+.bg-green {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    height: 100px;
+    padding: 20px;
+    margin: 5px;
+    background-color: green;
+}
+.bg-red {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    height: 100px;
+    padding: 20px;
+    margin: 5px;
+    background-color: red;
+}
+.button {
+    width: 30%;
+    font-size: 2vw;
+    background-color: white;
+}
+
+.toDoText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title {
+    font-size: 40px;
+}
+.description {
+    height: 30%;
+    font-size: 25px;
+}
+/*
+@keyframes identifier {
+    from {font-weight: bolder;}
+    to {font-weight: normal;}
+}
+*/
+
+.dateBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-name: identifier;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
