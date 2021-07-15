@@ -1,18 +1,23 @@
-
-
-/*
 @keyframes dateAni {
-    0% {color: magenta;}
-    25% {color: blue;}
-    50% {color: salmon;}
-    100% {color: black;}
-}
-*/
-
-.currentDate {
-    margin: 2px;
-    padding: 2px;
+    0% {
+      color: magenta;
+    }
+    25% {
+      color: blue;
+    }
+    50% {
+      color: salmon;
+    }
+    75% {
+      color: black;
+    }
+  }
+  .currentDate {
+    margin: 0.12445550715619166vw;
+    padding: 0.12445550715619166vw;
+    font-size: 1.1vw;
     display: flex;
+    flex-direction: column;
     outline-style: dotted;
     outline-width: thin;
     outline-color: grey;
@@ -24,13 +29,11 @@
     cursor: wait;
     font-family: monospace;
     font-weight: bolder;
-   /* 
+  
     animation-name: dateAni;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-    */
-}
-
+  }

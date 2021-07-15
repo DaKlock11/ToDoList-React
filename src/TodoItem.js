@@ -30,6 +30,8 @@ const getNextItemState = (itemState) => {
             return "COMPLETE";
         case "COMPLETE":
             return "IMCOMPLETE";
+        case "IMCOMPLETE":
+            return "COMPLETE";
         default:
             return itemState;        
     }
@@ -55,7 +57,7 @@ const TodoItem = props => {
     const onBtnClick = () => {
         //(Conditional terniary attempt) const newClass = toggleClass.className === 
         setItemState(getNextItemState(itemState));
-    } 
+    }; 
     
     return (
         <div className={getBgClass(itemState, isOverdue)}>
