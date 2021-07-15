@@ -24,43 +24,42 @@ import './ToDoItem.css'
 
 // Everything in the OVERDUE state is 'EXTRA CREDIT!'
 // If the item is past its due date, its beginning state should be 'OVERDUE'
-const getNextToggleClass = (toggleClass) => {
-    switch(toggleClass) {
-        case "white":
-            return "green";
-        case "green":
-            return "red";
-        case "red":
-            return "white";        
-    }
-}
-
-const getNextText = (toggleText) => {
-    switch(toggleText) {
+const getNextItemState = (itemState) => {
+    switch (itemState) {
         case "INCOMPLETE":
             return "COMPLETE";
         case "COMPLETE":
-            return "OVERDUE";
-        case "OVERDUE":
-            return "INCOMPLETE";    
+            return "IMCOMPLETE";
+        default:
+            return itemState;        
     }
+};
+
+const getBgClass = (itemState, isOverdue) => {
+    if (isOverdue) return "bg-red";
+    if (itemState === "COMPLETE") return "bg-green";
+    return "bg-white";
 }
 
+const getItemText = (itemState, isOverdue) => {
+    if (isOverdue) return "OVERDUE";
+    return itemState;
+};
+
 const TodoItem = props => {
-    //let { DATA } = props; <-- Not needed?
-    const [ toggleClass, setToggleClass ] = useState("white");
-    //const divStyle = {backgroundColor: color};
-    const [ toggleText, setToggleText ] = useState("INCOMPLETE");
+
+    const [itemState, setItemState] = useState("INCOMPLETE");
+
+    const isOverdue = new Date(props.data.dueDate) < new Date();
 
     const onBtnClick = () => {
         //(Conditional terniary attempt) const newClass = toggleClass.className === 
-        setToggleClass(getNextToggleClass(toggleClass))
-        setToggleText(getNextText(toggleText))
+        setItemState(getNextItemState(itemState));
     } 
     
     return (
-        <div className={`bg-${toggleClass}`}>
-            <button className="button" onClick={onBtnClick}>{toggleText}</button>
+        <div className={getBgClass(itemState, isOverdue)}>
+            <button className="button" onClick={onBtnClick}>{getItemText(itemState, isOverdue)}</button>
             <div className="toDoText">
                 <div className="title">{props.data.title}</div>
                 <div className="description">{props.data.description}</div>
